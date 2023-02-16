@@ -60,9 +60,8 @@ console.log(arr);
 //Задание 7 
 
 let arrSort = [9, 8, 7, 'a', 6, 5];
-arr.sort();
-arr.splice(3, 1);
-alert(arr);
+arrSort.sort().pop()
+alert(arrSort);
 
 
 //Задание 8
@@ -94,19 +93,18 @@ const randomArr = (arr) => {
     for (let i = 0, min = 1, max = 10; i < arr.length; i++) {
         arr[i] = Math.round(Math.random() * (max - min)) + min;
     }
-    const averageArr = (arr) => {
-        let sum = 0;
-        for (let i = 0; i < addEventListener.length; i++) {
-            sum += arr[i];
-        }
-        return sum / arr.length;
-    }
-    randomArr(sixArr);
-
 }
+const averageArr = (arr) => {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return sum / arr.length;
+}
+randomArr(sixArr);
 
 console.log(sixArr);
-console.log(averageArr(sixArr));
+console.log(averageArr(sixArr))
 
 
 //Задание 11
@@ -125,9 +123,15 @@ console.log(newArr);
 
 //Задание 12
 
-const arr = [];
+let arr = [];
+for (let i = 0; i < 5; i++) {
+    arr.push(Math.floor(Math.random() * 10) + 1);
+}
+console.log(arr);
 for (let i = 0; i < arr.length; i++) {
-    if (arr[i + 1] !== undefined) {
+    if (i === arr.length - 1) {
+        console.log(arr[i] + arr[0]);
+    } else {
         console.log(arr[i] + arr[i + 1]);
     }
 }
